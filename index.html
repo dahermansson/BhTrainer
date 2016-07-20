@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="comms.js"></script>
+        <style>
+            body {
+                padding-top: 100px;
+            }
+            .inner {
+                padding: 40px 15px;
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            var comm;
+            function GetRandomComm() {
+                var oldcomm = comm;
+                while(oldcomm ==comm){
+                    comm = comms[Math.floor(Math.random() * comms.length)]
+                }
+            }
+
+            function ShowTarget(){
+                if(comm == null)
+                    GetRandomComm();
+                document.getElementById("target").innerHTML = comm.FirstTarget + comm.SecondTarget;
+                document.getElementById("case").innerHTML = '';
+            }
+            
+            function ShowComm(){
+                if(comm == null){
+                    ShowTarget();
+                }	
+                document.getElementById("case").innerHTML = comm.Case;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="inner">
+                <button onclick="GetRandomComm();ShowTarget();" class="btn btn-lg btn-primary">Get New</button>
+                <button onclick="ShowComm();" class="btn btn-lg btn-Danger">Show</button>
+                </br>
+                <h1 id="target"></h1>
+                <h2 id="case"></h2>
+            </div>
+        </div>
+    </body>
+</html>
