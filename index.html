@@ -37,14 +37,15 @@
                     ShowTarget();
                 }	
                 document.getElementById("case").innerHTML = comm.Case;
+                setTimeout( function() {document.getElementById('btnNew').focus()},100);
             }
         </script>
     </head>
     <body>
         <div class="container">
             <div class="inner">
-                <button onclick="GetRandomComm();ShowTarget();" class="btn btn-lg btn-primary">Get New</button>
-                <button onclick="ShowComm();" class="btn btn-lg btn-Danger">Show</button>
+                <button id="btnNew" onclick="GetRandomComm();ShowTarget();" class="btn btn-lg btn-primary">Get New</button>
+                <button id="btnShow" onclick="ShowComm();" class="btn btn-lg btn-Danger">Show</button>
                 <div class="checkbox-inline">
                     <input type="checkbox" id="cbShow">Show alg</input>
                 </div>
