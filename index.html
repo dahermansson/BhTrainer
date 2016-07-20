@@ -25,7 +25,11 @@
                 if(comm == null)
                     GetRandomComm();
                 document.getElementById("target").innerHTML = comm.FTarget + comm.STarget;
-                document.getElementById("case").innerHTML = '';
+                if(document.getElementById("cbShow").checked)
+                    document.getElementById("case").innerHTML = comm.Case;
+                else
+                    document.getElementById("case").innerHTML = '';
+
             }
             
             function ShowComm(){
@@ -41,6 +45,9 @@
             <div class="inner">
                 <button onclick="GetRandomComm();ShowTarget();" class="btn btn-lg btn-primary">Get New</button>
                 <button onclick="ShowComm();" class="btn btn-lg btn-Danger">Show</button>
+                <div class="checkbox-inline">
+                    <input type="checkbox" id="cbShow">Show alg</input>
+                </div>
                 </br>
                 <h1 id="target"></h1>
                 <h2 id="case"></h2>
