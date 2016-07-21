@@ -187,7 +187,7 @@ var comms =
     },
     {
         "FTarget":	"J",
-        "STarget":	"T'",
+        "STarget":	"T",
         "Case": 	"[L F2 L', B]"
     },
     {
