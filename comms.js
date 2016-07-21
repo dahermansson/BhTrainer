@@ -113,6 +113,6 @@ var comms =
     {
         "FTarget":	"T",
         "STarget":	"F",
-        "Case": 	"F [U2, B D' B'] F'"
+        "Case": 	"F' [D R' D', L2] F"
     },
 ];
