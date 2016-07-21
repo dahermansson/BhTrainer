@@ -53,7 +53,7 @@ var comms =
 	{
         "FTarget":	"S",
         "STarget":	"N",
-        "Case": 	"F' [U2, R2 D' R2 D R2] F"
+        "Case": 	"F [L2 D L2 D' L2, U'] F'"
     },
 	{
         "FTarget":	"S",
@@ -89,5 +89,30 @@ var comms =
         "FTarget":	"S",
         "STarget":	"W",
         "Case": 	"D R' [L2 D' L2 D L2, U'] R D"
+    },
+    {
+        "FTarget":	"T",
+        "STarget":	"A",
+        "Case": 	"[U, L' D2 L]"
+    },
+    {
+        "FTarget":	"T",
+        "STarget":	"C",
+        "Case": 	"[U', L' D2 L]"
+    },
+    {
+        "FTarget":	"T",
+        "STarget":	"D",
+        "Case": 	"D' [R' D R, U2] D"
+    },
+    {
+        "FTarget":	"T",
+        "STarget":	"E",
+        "Case": 	"F' [F2, D' B D] F"
+    },
+    {
+        "FTarget":	"T",
+        "STarget":	"F",
+        "Case": 	"F [U2, B D' B'] F'"
     },
 ];
