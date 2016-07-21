@@ -14,6 +14,12 @@
 
         <script>
             var comm;
+
+            function GetAndShowNew(){
+                GetRandomComm();
+                ShowTarget();
+            }
+
             function GetRandomComm() {
                 var oldcomm = comm;
                 while(oldcomm ==comm){
@@ -29,7 +35,15 @@
                     document.getElementById("case").innerHTML = comm.Case;
                 else
                     document.getElementById("case").innerHTML = '';
+            }
 
+            function Auto(){
+                if(document.getElementById("cbAuto").checked){
+                    var time = document.getElementById("time").value
+                    timer = setInterval(GetAndShowNew, time * 1000);
+                }
+                else
+                    clearInterval(timer);
             }
             
             function ShowComm(){
@@ -37,18 +51,33 @@
                     ShowTarget();
                 }	
                 document.getElementById("case").innerHTML = comm.Case;
-                setTimeout( function() {document.getElementById('btnNew').focus()},100);
+                setTimeout(FocusNew,100);
             }
+
+            function FocusNew(){
+                document.getElementById('btnNew').focus()
+            }
+
         </script>
     </head>
-    <body>
+    <body onload="GetAndShowNew();">
         <div class="container">
             <div class="inner">
-                <button id="btnNew" onclick="GetRandomComm();ShowTarget();" class="btn btn-lg btn-primary">Get New</button>
+                <button id="btnNew" onclick="GetAndShowNew();" class="btn btn-lg btn-primary">Get New</button>
                 <button id="btnShow" onclick="ShowComm();" class="btn btn-lg btn-Danger">Show</button>
-                <div class="checkbox-inline">
-                    <input type="checkbox" id="cbShow">Show alg</input>
-                </div>
+                <label class="checkbox-inline"><input type="checkbox" id="cbShow">Show alg</input></label>
+                <label class="checkbox-inline"><input type="checkbox" id="cbAuto" onclick="Auto();">Auto</input></label>
+                <label for="time">:</label>
+                <select class="form-control" id="time">
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>8</option>
+                    <option>10</option>
+                    <option>12</option>
+                </select>
+
                 </br>
                 <h1 id="target"></h1>
                 <h2 id="case"></h2>

@@ -73,7 +73,7 @@ var comms =
 	{
         "FTarget":	"S",
         "STarget":	"R",
-        "Case": 	"[R', D L' D']"
+        "Case": 	"[F L2 F', R]"
     },
 	{
         "FTarget":	"S",
