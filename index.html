@@ -14,6 +14,7 @@
 
         <script>
             var comm;
+            var autoMode = false;
 
             function GetAndShowNew(){
                 GetRandomComm();
@@ -41,9 +42,14 @@
                 if(document.getElementById("cbAuto").checked){
                     var time = document.getElementById("time").value
                     timer = setInterval(GetAndShowNew, time * 1000);
+                    autoMode = true;
                 }
                 else
+                {
                     clearInterval(timer);
+                    autoMode = false;
+                }
+
             }
             
             function ShowComm(){
@@ -58,9 +64,14 @@
                 document.getElementById('btnNew').focus()
             }
 
+            function keyUp(event){
+                if(event.keyCode == 32 && !autoMode)
+                    GetAndShowNew();
+            }
+
         </script>
     </head>
-    <body onload="GetAndShowNew();">
+    <body onload="GetAndShowNew();" onkeyup="keyUp(event);">
         <div class="container">
             <div class="inner">
                 <div class="form-inline">
@@ -70,15 +81,15 @@
                     </div>
                     <div class="form-group">
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="cbShow"> Show alg
+                            <input type="checkbox" id="cbShow" onclick="FocusNew();"> Show alg
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="cbAuto" onclick="Auto();"> Auto
+                            <input type="checkbox" id="cbAuto" onclick="Auto();FocusNew();"> Auto
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="time">Time</label>
-                        <select class="form-control" id="time">
+                        <select class="form-control" id="time" onchange="FocusNew();">
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
