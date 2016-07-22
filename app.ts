@@ -1,5 +1,8 @@
+/// <reference path="comms.ts" />
+
 var comm;
             var autoMode = false;
+            var timer;
 
             function GetAndShowNew(){
                 GetRandomComm();
