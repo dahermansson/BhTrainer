@@ -25,4 +25,4 @@ var AlgorithmTrainer = (function () {
         this.autoMode = false;
     };
     return AlgorithmTrainer;
-}());
+})();
