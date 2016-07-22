@@ -1,49 +1,38 @@
-/// <reference path="comms.ts" />
 
-var comm;
-            var autoMode = false;
-            var timer;
+var algorithmTrainer = new AlgorithmTrainer(algorithms); 
 
             function GetAndShowNew(){
-                GetRandomComm();
+                algorithmTrainer.GetRandomAlgorithm();
                 ShowTarget();
             }
 
-            function GetRandomComm() {
-                var oldcomm = comm;
-                while(oldcomm ==comm){
-                    comm = comms[Math.floor(Math.random() * comms.length)]
-                }
-            }
-
             function ShowTarget(){
-                if(comm == null)
-                    GetRandomComm();
-                document.getElementById("target").innerHTML = comm.FTarget + comm.STarget;
+                if(algorithmTrainer.current == null)
+                    algorithmTrainer.GetRandomAlgorithm();
+                document.getElementById("target").innerHTML = algorithmTrainer.GetCurrentTargets();
                 if(document.getElementById("cbShow").checked)
-                    document.getElementById("case").innerHTML = comm.Case;
+                    document.getElementById("algorithm").innerHTML = algorithmTrainer.current.Algorithm;
                 else
-                    document.getElementById("case").innerHTML = '';
+                    document.getElementById("algorithm").innerHTML = '';
            }
 
-            function Auto(){
+            function AutoSwitch(){
                 if(document.getElementById("cbAuto").checked){
-                    var time = document.getElementById("time").value
-                    timer = setInterval(GetAndShowNew, time * 1000);
-                    autoMode = true;
+                    algorithmTrainer.TurnOnOutoMode(document.getElementById("time").value);
+                    algorithmTrainer.timer = setInterval(GetAndShowNew, algorithmTrainer.delay * 1000);
                 }
                 else
                 {
-                    clearInterval(timer);
-                    autoMode = false;
+                    algorithmTrainer.TurnOffOutoMode();
+                    clearInterval(algorithmTrainer.timer);
                 }
             }
             
             function ShowComm(){
-                if(comm == null){
-                    GetAndShowNew();
+                if(algorithmTrainer.current == null){
+                    algorithmTrainer.GetRandomAlgorithm();
                 }	
-                document.getElementById("case").innerHTML = comm.Case;
+                document.getElementById("Case").innerHTML = algorithmTrainer.current.Algorithm;
                 setTimeout(FocusNew,100);
             }
 
@@ -52,6 +41,6 @@ var comm;
             }
 
             function keyUp(event){
-                if(event.keyCode == 32 && !autoMode)
+                if(event.keyCode == 32 && !algorithmTrainer.autoMode)
                     GetAndShowNew();
             }

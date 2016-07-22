@@ -1,9 +1,14 @@
-var comms = 
-[
+interface Algorithm{
+    FTarget: string;
+    STarget: string;
+    Algorithm: string;
+}
+
+var algorithms: Algorithm[] = [
     {
         FTarget: 	"S",
         STarget: 	"A",
-        Algorithm:		"[L D' L', U']"
+        Algorithm:	"[L D' L', U']"
     },
     {
         FTarget: 	"S",
