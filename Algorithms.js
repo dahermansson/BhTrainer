@@ -1,4 +1,4 @@
-var comms = [
+var algorithms = [
     {
         FTarget: "S",
         STarget: "A",

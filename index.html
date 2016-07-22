@@ -1,7 +1,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <script src="comms.js"></script>
+        <script src="Algorithms.js"></script>
+        <script src="AlgorithmTrainer.js"></script>
         <script src="app.js"></script>
         <style>
             body {
@@ -26,7 +27,7 @@
                             <input type="checkbox" id="cbShow" onclick="FocusNew();"> Show alg
                         </label>
                         <label class="checkbox-inline">
-                            <input type="checkbox" id="cbAuto" onclick="Auto();FocusNew();"> Auto
+                            <input type="checkbox" id="cbAuto" onclick="AutoSwitch();FocusNew();"> Auto
                         </label>
                     </div>
                     <div class="form-group">
@@ -44,7 +45,7 @@
                 </div>
                 </br>
                 <h1 id="target"></h1>
-                <h2 id="case"></h2>
+                <h2 id="algorithm"></h2>
             </div>
         </div>
     </body>
