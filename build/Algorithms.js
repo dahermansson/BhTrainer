@@ -245,4 +245,3 @@ var algorithms = [
         Algorithm: "[L' F2 L, B2]"
     },
 ];
-

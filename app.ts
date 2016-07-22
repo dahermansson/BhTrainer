@@ -32,7 +32,7 @@ var algorithmTrainer = new AlgorithmTrainer(algorithms);
                 if(algorithmTrainer.current == null){
                     algorithmTrainer.GetRandomAlgorithm();
                 }	
-                document.getElementById("Case").innerHTML = algorithmTrainer.current.Algorithm;
+                document.getElementById("algorithm").innerHTML = algorithmTrainer.current.Algorithm;
                 setTimeout(FocusNew,100);
             }
 
