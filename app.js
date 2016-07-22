@@ -22,7 +22,7 @@ function AutoSwitch() {
         clearInterval(algorithmTrainer.timer);
     }
 }
-function ShowComm() {
+function ShowAlgorithm() {
     if (algorithmTrainer.current == null) {
         algorithmTrainer.GetRandomAlgorithm();
     }
