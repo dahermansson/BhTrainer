@@ -28,7 +28,7 @@ var algorithmTrainer = new AlgorithmTrainer(algorithms);
                 }
             }
             
-            function ShowComm(){
+            function ShowAlgorithm(){
                 if(algorithmTrainer.current == null){
                     algorithmTrainer.GetRandomAlgorithm();
                 }	
