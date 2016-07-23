@@ -2,6 +2,7 @@
 var algorithmTrainer = new AlgorithmTrainer(algorithms); 
 
             function GetAndShowNew(){
+                document.getElementById("antal").innerHTML = algorithmTrainer.algorithms.length + "/378";
                 algorithmTrainer.GetRandomAlgorithm();
                 ShowTarget();
             }
